@@ -25,6 +25,9 @@ namespace SimpleNeuralNetwork
             if (!this.checkNewLayers(Layers))
             {
                 string layersStr = this.getThisLayers(Layers);
+
+
+
                 return;
             }
 
