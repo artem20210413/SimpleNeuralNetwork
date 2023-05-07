@@ -1,0 +1,15 @@
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\bin\Debug\net6.0\SimpleNeuralNetwork.exe
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\bin\Debug\net6.0\SimpleNeuralNetwork.deps.json
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\bin\Debug\net6.0\SimpleNeuralNetwork.runtimeconfig.json
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\bin\Debug\net6.0\SimpleNeuralNetwork.dll
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\bin\Debug\net6.0\SimpleNeuralNetwork.pdb
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\obj\Debug\net6.0\SimpleNeuralNetwork.csproj.AssemblyReference.cache
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\obj\Debug\net6.0\SimpleNeuralNetwork.GeneratedMSBuildEditorConfig.editorconfig
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\obj\Debug\net6.0\SimpleNeuralNetwork.AssemblyInfoInputs.cache
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\obj\Debug\net6.0\SimpleNeuralNetwork.AssemblyInfo.cs
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\obj\Debug\net6.0\SimpleNeuralNetwork.csproj.CoreCompileInputs.cache
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\obj\Debug\net6.0\SimpleNeuralNetwork.dll
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\obj\Debug\net6.0\refint\SimpleNeuralNetwork.dll
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\obj\Debug\net6.0\SimpleNeuralNetwork.pdb
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\obj\Debug\net6.0\SimpleNeuralNetwork.genruntimeconfig.cache
+D:\!№№№№№    Учеба   №№№№№\Магистр\Диплом\SimpleNeuralNetwork\SimpleNeuralNetwork\obj\Debug\net6.0\ref\SimpleNeuralNetwork.dll
