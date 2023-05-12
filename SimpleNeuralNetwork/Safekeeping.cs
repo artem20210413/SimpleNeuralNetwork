@@ -21,12 +21,6 @@ namespace SimpleNeuralNetwork
         }
         public async void Saving(List<Layer> Layers, int epoch, NeuronNetworks neuronNetworks)
         {
-            if (!this.CheckNewLayers(Layers, epoch))
-            {
-                string layersStr = this.GetThisLayers(Layers, epoch);
-
-                return;
-            }
 
             int countLayersHiddent = Layers.Count - 1;
             List<List<double>> neuron;
@@ -36,11 +30,8 @@ namespace SimpleNeuralNetwork
             string info = "#";
             for(int i = 0; i < Layers.Count; i++)
             {
-                if (Layers[i].Type == NeuronType.Normal)
-                {
                     info += this.CalculationInfoByLayer(Layers[i]);
                     info += "/";
-                }
             }
 
             //https://metanit.com/sharp/tutorial/5.5.php
@@ -111,8 +102,6 @@ namespace SimpleNeuralNetwork
 
             foreach (var layer in layers)
             {
-                if (layer.Type == NeuronType.Normal)
-                {
                     string layerString = arrayLayers[layerIndex];
                     string[] neuronsArray = layerString.Split('}');
                     int neuronIndex = 0;
@@ -133,7 +122,6 @@ namespace SimpleNeuralNetwork
                     }
 
                     layerIndex++;
-                }
             }
 
             return layers;

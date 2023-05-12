@@ -48,12 +48,9 @@ namespace SimpleNeuralNetwork
         public double Learn(List<Tuple<double, double[]>> dataset, int epoch)
         {
             var result = 0.0;
-            if (!Safekeeping.CheckNewLayers(Layers, epoch)) {
+            if (!Safekeeping.CheckNewLayers(Layers, epoch)) { 
 
-                foreach (var data in dataset)
-                {
-                   BackPropagation(data.Item1, data.Item2);
-                }
+
                 Layers = Safekeeping.GetLayers(Layers, epoch);
             }
             else

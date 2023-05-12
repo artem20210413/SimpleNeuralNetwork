@@ -19,10 +19,7 @@ namespace SimpleNeuralNetwork
         public double Delta { get; private set; }
 
 
-        public void SetDelta(double delta)
-        {
-            Delta = delta;
-        }
+        
         public Neuron(int inputCount, NeuronType type = NeuronType.Normal)
         {
 
@@ -112,7 +109,10 @@ namespace SimpleNeuralNetwork
         {
             return Output.ToString();
         }
-
+        public void SetDelta(double delta)
+        {
+            Delta = delta;
+        }
         public void SetWeights(List<double> weights)
         {
             if (weights.Count != Weights.Count)
