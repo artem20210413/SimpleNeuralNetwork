@@ -34,5 +34,8 @@ namespace SimpleNeuralNetwork
             return Type.ToString();
         }
 
+        
+
+
     }
 }

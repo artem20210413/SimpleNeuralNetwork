@@ -11,7 +11,7 @@ namespace SimpleNeuralNetwork
     {
 
         public Topology Topology { get; }
-        public List<Layer> Layers { get; }
+        public List<Layer> Layers { get; set; }
 
         private Safekeeping Safekeeping;
 
@@ -47,17 +47,29 @@ namespace SimpleNeuralNetwork
 
         public double Learn(List<Tuple<double, double[]>> dataset, int epoch)
         {
-            var error = 0.0;
-            for (int i = 0; i < epoch; i++)
-            {
+            var result = 0.0;
+            if (!Safekeeping.CheckNewLayers(Layers, epoch)) {
+
                 foreach (var data in dataset)
                 {
-                    error += BackPropagation(data.Item1, data.Item2);
+                   BackPropagation(data.Item1, data.Item2);
                 }
+                Layers = Safekeeping.GetLayers(Layers, epoch);
             }
-            Safekeeping.Saving(Layers, this);
+            else
+            {
+                var error = 0.0;
+                for (int i = 0; i < epoch; i++)
+                {
+                    foreach (var data in dataset)
+                    {
+                       error += BackPropagation(data.Item1, data.Item2);
+                    }
+                }
+                Safekeeping.Saving(Layers, epoch, this);
+                result = error / epoch;
+            }
 
-            var result = error / epoch;
             return result;
         }
 
@@ -68,9 +80,10 @@ namespace SimpleNeuralNetwork
             var difference = actual - exprected;
 
             foreach(var neuron in Layers.Last().Neurons)
-            {
+            { 
                 neuron.Learn(difference, Topology.LearningRate);
             }
+
             for(var j = Layers.Count - 2; j>=0; j--)
             {
                 var layer = Layers[j];
@@ -89,6 +102,7 @@ namespace SimpleNeuralNetwork
                 }
             }
             var result = Math.Pow(difference, 2);
+
             return result;
         }
 
@@ -157,5 +171,49 @@ namespace SimpleNeuralNetwork
             var inputLayer = new Layer(inputNeurons, NeuronType.Input);
             Layers.Add(inputLayer);
         }
+
+     /*   public void RestoreNeuronConnections(List<List<double>> neuronWeights, List<List<double>> neuronBiases)
+        {
+            // Проверяем, есть ли достаточно слоев и нейронов для восстановления
+            if (neuronWeights.Count != Layers.Count || neuronBiases.Count != Layers.Count)
+            {
+                throw new ArgumentException("Неверное количество слоев или нейронов для восстановления.");
+            }
+
+            // Восстанавливаем веса нейронов и связи между нейронами
+            for (int i = 0; i < Layers.Count; i++)
+            {
+                var layer = Layers[i];
+                var layerNeuronWeights = neuronWeights[i];
+                var layerNeuronBiases = neuronBiases[i];
+
+                // Проверяем, есть ли достаточно весов и смещений для восстановления слоя
+                if (layerNeuronWeights.Count != layer.Neurons.Count || layerNeuronBiases.Count != layer.Neurons.Count)
+                {
+                    throw new ArgumentException("Неверное количество весов или смещений для восстановления слоя.");
+                }
+
+                // Восстанавливаем веса нейронов слоя
+                for (int j = 0; j < layer.Neurons.Count; j++)
+                {
+                    var neuron = layer.Neurons[j];
+                    var locNeuronWeights = layerNeuronWeights[j];
+
+                    // Проверяем, есть ли достаточно весов для восстановления нейрона
+                    if (locNeuronWeights.Count != neuron.Inputs.Count)
+                    {
+                        throw new ArgumentException("Неверное количество весов для восстановления нейрона.");
+                    }
+
+                    // Обновляем веса нейрона
+                    neuron.SetWeights(neuronWeights);
+                }
+
+                // Восстанавливаем смещения нейронов слоя
+                layer.SetBiases(layerNeuronBiases);
+            }
+        }*/
+
+
     }
 }

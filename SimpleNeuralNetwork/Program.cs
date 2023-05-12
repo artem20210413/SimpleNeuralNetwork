@@ -34,7 +34,7 @@ var dataset = new List<Tuple<double, double[]>>
 var topology = new Topology(4, 1, 0.1, 2,3);
 var neuronNetwork = new NeuronNetworks(topology);
 
-var difference = neuronNetwork.Learn(dataset, 10000);
+var difference = neuronNetwork.Learn(dataset, 1000000);
 var results = new List<double>();
 
 foreach (var data in dataset)

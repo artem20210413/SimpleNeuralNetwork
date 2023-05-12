@@ -18,6 +18,11 @@ namespace SimpleNeuralNetwork
         public double Output { get; private set; }
         public double Delta { get; private set; }
 
+
+        public void SetDelta(double delta)
+        {
+            Delta = delta;
+        }
         public Neuron(int inputCount, NeuronType type = NeuronType.Normal)
         {
 
@@ -99,7 +104,6 @@ namespace SimpleNeuralNetwork
 
                 var newWeight = weiht - Input * Delta * learningRate;
                 Weights[i] = newWeight;
-
             }
 
         }
@@ -108,5 +112,21 @@ namespace SimpleNeuralNetwork
         {
             return Output.ToString();
         }
+
+        public void SetWeights(List<double> weights)
+        {
+            if (weights.Count != Weights.Count)
+            {
+                throw new ArgumentException("Неверное количество весов для обновления нейрона.");
+            }
+
+            for (int i = 0; i < weights.Count; i++)
+            {
+                Weights[i] = weights[i];
+            }
+        }
+
+      
+
     }
 }
